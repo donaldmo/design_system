@@ -321,7 +321,6 @@ select {
 	color: hsl(var(--clr-white) / .25);
 }
 
-
 /* ------------------- */
 /* Compontents         */
 /* ------------------- */
@@ -357,11 +356,27 @@ select {
 }
 
 .primary-navigation {
-	--gap: 8rem;
 	--underline-gap: 2rem;
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+@media (max-width: 35rem) {
+	.primary-navigation {
+		--underline-gap: .5rem;
+		flex-direction: column;
+		position: fixed;
+		inset: 0 0 0 30%;
+		padding: min(20rem, 15vh) 2rem;
+		margin: 0;
+		background-color: black;
+		z-index: 1000;
+	}
+
+	.primary-navigation.underline-indicators>.active {
+		border: 0;
+	}
 }
 
 .primary-navigation a {
