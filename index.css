@@ -386,6 +386,7 @@ select {
 		margin: 0;
 		z-index: 1000;
 		transform: translateX(100%);
+		transition: transform 500ms ease-in-out;
 	}
 
 	.primary-navigation.underline-indicators>.active {
@@ -407,7 +408,17 @@ select {
 		background: transparent;
 		background-image: url(./assets/shared/icon-hamburger.svg);
 		background-repeat: no-repeat;
+		background-position: center;
 		z-index: 2000;
+	}
+
+	.mobile-nav-toggle[aria-expanded="true"] {
+		background-image: url(./assets/shared/icon-close.svg);
+	}
+
+	.mobile-nav-toggle:focus {
+		outline: 5px solid white;
+		outline-offset: 5px;
 	}
 }
 
